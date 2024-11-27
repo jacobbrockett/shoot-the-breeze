@@ -8,6 +8,7 @@ TagManager:
   - GravyPoint
   - MashPoint
   - Pilgrim
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -47,4 +48,7 @@ TagManager:
     locked: 0
   - name: Environment
     uniqueID: 3473267529
+    locked: 0
+  - name: Player
+    uniqueID: 2984984899
     locked: 0
