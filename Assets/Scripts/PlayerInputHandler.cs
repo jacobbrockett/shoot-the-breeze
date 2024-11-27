@@ -52,6 +52,8 @@ public class PlayerInputHandler : MonoBehaviour
         {
             player.GetProjectileLauncher().Launch();
         }
+
+        player.AimGun(Camera.main.ScreenToWorldPoint(Input.mousePosition));
     }
 
 
