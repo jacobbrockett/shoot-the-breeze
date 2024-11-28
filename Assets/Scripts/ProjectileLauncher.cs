@@ -23,6 +23,8 @@ public class ProjectileLauncher : MonoBehaviour
     [SerializeField] float maxReloadTime = 10f;
     [SerializeField] float coolDownTime = 0.25f;
 
+    [SerializeField] float ammoDuration = 2f;
+
     float currentReloadTime = 0;
 
     void Awake()
@@ -48,7 +50,7 @@ public class ProjectileLauncher : MonoBehaviour
 
         newProjectile.GetComponent<Rigidbody2D>().velocity = transform.up * projectileSpeed;
 
-        Destroy(newProjectile, 2); // destroy projectile after 30 seconds
+        Destroy(newProjectile, ammoDuration); // destroy projectile after 30 seconds
 
     }
 
