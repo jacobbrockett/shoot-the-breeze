@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - TurkeyPoint
+  - GravyPoint
+  - MashPoint
+  - Pilgrim
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -40,4 +45,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Environment
+    uniqueID: 3473267529
+    locked: 0
+  - name: Player
+    uniqueID: 2984984899
     locked: 0
