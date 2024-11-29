@@ -21,6 +21,9 @@ public class PlayerInputHandler : MonoBehaviour
     [Header("Health")]
     [SerializeField] int currentHealth = 5;
     [SerializeField] int maxHealth = 5;
+    [Header("Audio")]
+    [SerializeField] AudioSource audioSource; // or GetComponent<AudioSource>()
+    [SerializeField] AudioClip audioClip;
 
     /**
     * function: FixedUpdate()
@@ -53,6 +56,7 @@ public class PlayerInputHandler : MonoBehaviour
             player.GetProjectileLauncher().Launch();
         }
 
+        // Aim Weapon to where cursor is:
         player.AimGun(Camera.main.ScreenToWorldPoint(Input.mousePosition));
     }
 
@@ -104,7 +108,4 @@ public class PlayerInputHandler : MonoBehaviour
     {
         return maxHealth;
     }
-
-
-    
 }

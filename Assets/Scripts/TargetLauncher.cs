@@ -5,6 +5,7 @@ using UnityEngine;
 public class TargetLauncher : MonoBehaviour
 {
     [SerializeField] ProjectileLauncher projectileLauncher;
+    [SerializeField] PlayerInputHandler playerInputHandler;
     [SerializeField] int launchInterval;
 
     // Start is called before the first frame update
@@ -21,7 +22,17 @@ public class TargetLauncher : MonoBehaviour
         {
             while(true)
             {
-                projectileLauncher.Launch();
+                GameObject newObject = projectileLauncher.Launch();
+
+                if(newObject != null)
+                {
+                    Target newTarget = newObject.GetComponent<Target>();
+
+                    if(newTarget != null)
+                    {
+                        newTarget.SetPlayerInputHandler(playerInputHandler);
+                    }
+                }
                 yield return new WaitForSeconds(launchInterval);
             }
             

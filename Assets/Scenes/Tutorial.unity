@@ -291,6 +291,17 @@ Transform:
   - {fileID: 1570164328}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &824690589 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1176481715196920450, guid: 8b145658a3520411b83575936725eab7, type: 3}
+  m_PrefabInstance: {fileID: 5140654003077412866}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f586b42e267fb4ab39e342625e9b9379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &975834768 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6468978329217925596, guid: 998f2bb11839142258a6ec97dc1f48d7, type: 3}
@@ -446,7 +457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6468978329217925596, guid: 998f2bb11839142258a6ec97dc1f48d7, type: 3}
       propertyPath: ammoDuration
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6468978329217925596, guid: 998f2bb11839142258a6ec97dc1f48d7, type: 3}
       propertyPath: projectileSpeed
@@ -659,6 +670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileLauncher: {fileID: 975834768}
+  playerInputHandler: {fileID: 824690589}
   launchInterval: 2
 --- !u!4 &1783853410
 Transform:
@@ -688,6 +700,14 @@ PrefabInstance:
     - target: {fileID: 386431286768820897, guid: 8b145658a3520411b83575936725eab7, type: 3}
       propertyPath: m_Name
       value: Player Space
+      objectReference: {fileID: 0}
+    - target: {fileID: 2576687657147280179, guid: 8b145658a3520411b83575936725eab7, type: 3}
+      propertyPath: projectileSpeed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4803055874411064621, guid: 8b145658a3520411b83575936725eab7, type: 3}
+      propertyPath: rotationSpeed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4969014029781452058, guid: 8b145658a3520411b83575936725eab7, type: 3}
       propertyPath: m_LocalPosition.x

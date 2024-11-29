@@ -4,11 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - TurkeyPoint
-  - GravyPoint
-  - MashPoint
-  - Pilgrim
   - Projectile
+  - Bullet
+  - Target
   layers:
   - Default
   - TransparentFX
