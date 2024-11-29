@@ -12,16 +12,14 @@ public class ProjectileLauncher : MonoBehaviour
 
     [Header("Helpers")]
     [SerializeField] Transform spawnTransform;
-
-    [Header("Audio")]
-    [SerializeField] AudioSource audioSource; // or GetComponent<AudioSource>()
-    [SerializeField] AudioClip audioClip;
     
     [Header("Ammo")]
     [SerializeField] int maxAmmo = 10;
     [SerializeField] int currentAmmo = 10;
     [SerializeField] float maxReloadTime = 10f;
     [SerializeField] float coolDownTime = 0.25f;
+
+    [SerializeField] float ammoDuration = 2f;
 
     float currentReloadTime = 0;
 
@@ -32,11 +30,11 @@ public class ProjectileLauncher : MonoBehaviour
 
     bool coolingDown = false;
     // Launch a projectile Forward
-    public void Launch(){ // return recoil amount
+    public GameObject Launch(){ // return recoil amount
 
         if(coolingDown)
         {
-            return;
+            return null;
         }
         CoolDown();
 
@@ -44,12 +42,11 @@ public class ProjectileLauncher : MonoBehaviour
 
         GameObject newProjectile = Instantiate(projectilePrefab, spawnTransform.position, Quaternion.identity); // creates new projectile
 
-        // TODO: play gunshot
-
         newProjectile.GetComponent<Rigidbody2D>().velocity = transform.up * projectileSpeed;
 
-        Destroy(newProjectile, 2); // destroy projectile after 30 seconds
+        Destroy(newProjectile, ammoDuration); // destroy projectile after 30 seconds
 
+        return newProjectile;
     }
 
     void CoolDown()

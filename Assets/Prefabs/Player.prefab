@@ -152,9 +152,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -821699767
-  m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingLayerID: -1309982397
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -237,8 +237,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -821699767
-  m_SortingLayer: 1
+  m_SortingLayerID: -1309982397
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
@@ -372,7 +372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4785556059202062703, guid: 998f2bb11839142258a6ec97dc1f48d7, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4785556059202062703, guid: 998f2bb11839142258a6ec97dc1f48d7, type: 3}
       propertyPath: m_SortingOrder
@@ -380,7 +380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4785556059202062703, guid: 998f2bb11839142258a6ec97dc1f48d7, type: 3}
       propertyPath: m_SortingLayerID
-      value: -821699767
+      value: -1309982397
       objectReference: {fileID: 0}
     - target: {fileID: 6468978329217925596, guid: 998f2bb11839142258a6ec97dc1f48d7, type: 3}
       propertyPath: projectileSpeed
@@ -390,6 +390,10 @@ PrefabInstance:
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 552128737768472798, guid: 255dc6d6af74043f9b5878a9504841bd, type: 3}
+    - target: {fileID: 7725360598699712723, guid: 998f2bb11839142258a6ec97dc1f48d7, type: 3}
+      propertyPath: m_Name
+      value: SpawnTransform
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
