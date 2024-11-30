@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class TargetLauncher : MonoBehaviour
 {
-    [SerializeField] ProjectileLauncher projectileLauncher;
     [SerializeField] PlayerInputHandler playerInputHandler;
+    [Header("Projectile")]
+    [SerializeField] ProjectileLauncher projectileLauncher;
     [SerializeField] int launchInterval;
+    [Header("Audio")]
+    [SerializeField] AudioSource launchAudio;
+    [SerializeField] AudioSource damageAudio;
 
     IEnumerator LaunchTargetsCoroutine = null;
 
@@ -34,6 +38,8 @@ public class TargetLauncher : MonoBehaviour
             {
                 GameObject newObject = projectileLauncher.Launch();
 
+                launchAudio.Play();
+
                 if(newObject != null)
                 {
                     Target newTarget = newObject.GetComponent<Target>();
@@ -41,6 +47,8 @@ public class TargetLauncher : MonoBehaviour
                     if(newTarget != null)
                     {
                         newTarget.SetPlayerInputHandler(playerInputHandler);
+
+                        newTarget.SetDamageAudio(damageAudio);
                     }
                 }
                 yield return new WaitForSeconds(launchInterval);
