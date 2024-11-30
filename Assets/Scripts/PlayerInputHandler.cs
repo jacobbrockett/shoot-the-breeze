@@ -24,13 +24,14 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] int maxHealth = 5;
 
     [Header("Ammo")]
-    [SerializeField] int currentAmmo;
-    [SerializeField] int availableAmmo;
+    [SerializeField] int currentAmmo = 5;
+    [SerializeField] int maxAmmo = 5;
+    [SerializeField] int availableAmmo = 10;
+    [SerializeField] float reloadTime = 1f;
 
     [Header("Audio")]
     [SerializeField] AudioSource audioSource; // or GetComponent<AudioSource>()
     [SerializeField] AudioClip audioClip;
-
     
     public void Update()
     {
@@ -45,11 +46,14 @@ public class PlayerInputHandler : MonoBehaviour
         }
 
         // TODO: Reload Weapon:
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
+        }
 
         // Aim Weapon to where cursor is:
         player.AimGun(Camera.main.ScreenToWorldPoint(Input.mousePosition));
     }
-
 
     // -------
     // Points:
@@ -112,6 +116,50 @@ public class PlayerInputHandler : MonoBehaviour
         if(currentAmmo > 0)
         {
             currentAmmo = currentAmmo - 1;
+        }
+    }
+
+    bool currentlyReloading = false;
+    public void Reload()
+    {
+        if (currentlyReloading){
+            return;
+        }
+        if (currentAmmo == maxAmmo)
+        {
+            return;
+        }
+        if (availableAmmo <= 0)
+        {
+            return;
+        }
+
+        currentlyReloading = true;
+        StartCoroutine(ReloadRoutine());
+
+        IEnumerator ReloadRoutine()
+        {
+            Debug.Log("Reload routine active!");
+
+            yield return new WaitForSeconds(reloadTime);
+
+            int ammoNeeded = maxAmmo - currentAmmo;
+
+            if (ammoNeeded <= availableAmmo) // Enough available ammo for a full reload
+            {
+                Debug.Log("Full Reload");
+                currentAmmo += ammoNeeded; // Reload to max
+                availableAmmo -= ammoNeeded; // Reduce available ammo
+            }
+            else // Not enough available ammo for a full reload
+            {
+                Debug.Log("Partial Reload");
+                currentAmmo += availableAmmo; // Add whatever is left to current ammo
+                availableAmmo = 0; // No ammo left
+            }
+
+            currentlyReloading = false;
+            Debug.Log("Reload routine done!");
         }
     }
     
