@@ -18,64 +18,59 @@ public class PlayerInputHandler : MonoBehaviour
 
     [Header("Points")]
     [SerializeField] int currentPoints = 0;
+
     [Header("Health")]
     [SerializeField] int currentHealth = 5;
     [SerializeField] int maxHealth = 5;
+
+    [Header("Ammo")]
+    [SerializeField] int currentAmmo = 5;
+    [SerializeField] int maxAmmo = 5;
+    [SerializeField] int availableAmmo = 10;
+    [SerializeField] float reloadTime = 1f;
+
     [Header("Audio")]
     [SerializeField] AudioSource audioSource; // or GetComponent<AudioSource>()
     [SerializeField] AudioClip audioClip;
-
-    /**
-    * function: FixedUpdate()
-    * args: None
-    * description: Grabs player input and moves the spaceship accordingly
-    */
-    void FixedUpdate(){
-        // Initialize Vector3:
-        Vector3 movement = Vector3.zero;
-
-        // Move Left:
-        if (Input.GetKey(KeyCode.A))
-        {
-            movement += new Vector3(-1, 0, 0);
-        }
-
-        // Move Right:
-        if (Input.GetKey(KeyCode.D))
-        {
-            movement += new Vector3(1, 0, 0);
-        }
-
-    }
-
+    
     public void Update()
     {
         // Fire Weapon:
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            player.GetProjectileLauncher().Launch();
+            if(currentAmmo > 0)
+            {
+                player.GetProjectileLauncher().Launch();
+                DecrementAmmo();
+            }
+        }
+
+        // TODO: Reload Weapon:
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
         }
 
         // Aim Weapon to where cursor is:
         player.AimGun(Camera.main.ScreenToWorldPoint(Input.mousePosition));
     }
 
-
-    /**
-    * function: IncrementPoint()
-    * args: None
-    * description: Increments the current points field and plays the coin audio source
-    */
+    // -------
+    // Points:
+    // -------
     public void IncrementPoint(int addPoints)
     {
         currentPoints = currentPoints + addPoints;
     }
 
-    public void DecrementHealth()
+    public int GetCurrentPoints()
     {
-        currentHealth = currentHealth - 1;
+        return currentPoints;
     }
 
+    // -------
+    // Health:
+    // -------
     public void IncrementHealth()
     {
         if (currentHealth == maxHealth)
@@ -88,15 +83,9 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-
-    /**
-    * function: GetCurrentPoints()
-    * args: None
-    * description: Getter for current points field
-    */
-    public int GetCurrentPoints()
+    public void DecrementHealth()
     {
-        return currentPoints;
+        currentHealth = currentHealth - 1;
     }
 
     public int GetCurrentHealth()
@@ -108,4 +97,70 @@ public class PlayerInputHandler : MonoBehaviour
     {
         return maxHealth;
     }
+
+    // -----
+    // Ammo:
+    // -----
+    public int GetCurrentAmmo()
+    {
+        return currentAmmo;
+    }
+
+    public int GetAvailableAmmo()
+    {
+        return availableAmmo;
+    }
+
+    public void DecrementAmmo()
+    {
+        if(currentAmmo > 0)
+        {
+            currentAmmo = currentAmmo - 1;
+        }
+    }
+
+    bool currentlyReloading = false;
+    public void Reload()
+    {
+        if (currentlyReloading){
+            return;
+        }
+        if (currentAmmo == maxAmmo)
+        {
+            return;
+        }
+        if (availableAmmo <= 0)
+        {
+            return;
+        }
+
+        currentlyReloading = true;
+        StartCoroutine(ReloadRoutine());
+
+        IEnumerator ReloadRoutine()
+        {
+            Debug.Log("Reload routine active!");
+
+            yield return new WaitForSeconds(reloadTime);
+
+            int ammoNeeded = maxAmmo - currentAmmo;
+
+            if (ammoNeeded <= availableAmmo) // Enough available ammo for a full reload
+            {
+                Debug.Log("Full Reload");
+                currentAmmo += ammoNeeded; // Reload to max
+                availableAmmo -= ammoNeeded; // Reduce available ammo
+            }
+            else // Not enough available ammo for a full reload
+            {
+                Debug.Log("Partial Reload");
+                currentAmmo += availableAmmo; // Add whatever is left to current ammo
+                availableAmmo = 0; // No ammo left
+            }
+
+            currentlyReloading = false;
+            Debug.Log("Reload routine done!");
+        }
+    }
+    
 }
