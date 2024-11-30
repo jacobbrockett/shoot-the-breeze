@@ -18,64 +18,55 @@ public class PlayerInputHandler : MonoBehaviour
 
     [Header("Points")]
     [SerializeField] int currentPoints = 0;
+
     [Header("Health")]
     [SerializeField] int currentHealth = 5;
     [SerializeField] int maxHealth = 5;
+
+    [Header("Ammo")]
+    [SerializeField] int currentAmmo;
+    [SerializeField] int availableAmmo;
+
     [Header("Audio")]
     [SerializeField] AudioSource audioSource; // or GetComponent<AudioSource>()
     [SerializeField] AudioClip audioClip;
 
-    /**
-    * function: FixedUpdate()
-    * args: None
-    * description: Grabs player input and moves the spaceship accordingly
-    */
-    void FixedUpdate(){
-        // Initialize Vector3:
-        Vector3 movement = Vector3.zero;
-
-        // Move Left:
-        if (Input.GetKey(KeyCode.A))
-        {
-            movement += new Vector3(-1, 0, 0);
-        }
-
-        // Move Right:
-        if (Input.GetKey(KeyCode.D))
-        {
-            movement += new Vector3(1, 0, 0);
-        }
-
-    }
-
+    
     public void Update()
     {
         // Fire Weapon:
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            player.GetProjectileLauncher().Launch();
+            if(currentAmmo > 0)
+            {
+                player.GetProjectileLauncher().Launch();
+                DecrementAmmo();
+            }
         }
+
+        // TODO: Reload Weapon:
 
         // Aim Weapon to where cursor is:
         player.AimGun(Camera.main.ScreenToWorldPoint(Input.mousePosition));
     }
 
 
-    /**
-    * function: IncrementPoint()
-    * args: None
-    * description: Increments the current points field and plays the coin audio source
-    */
+    // -------
+    // Points:
+    // -------
     public void IncrementPoint(int addPoints)
     {
         currentPoints = currentPoints + addPoints;
     }
 
-    public void DecrementHealth()
+    public int GetCurrentPoints()
     {
-        currentHealth = currentHealth - 1;
+        return currentPoints;
     }
 
+    // -------
+    // Health:
+    // -------
     public void IncrementHealth()
     {
         if (currentHealth == maxHealth)
@@ -88,15 +79,9 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-
-    /**
-    * function: GetCurrentPoints()
-    * args: None
-    * description: Getter for current points field
-    */
-    public int GetCurrentPoints()
+    public void DecrementHealth()
     {
-        return currentPoints;
+        currentHealth = currentHealth - 1;
     }
 
     public int GetCurrentHealth()
@@ -108,4 +93,26 @@ public class PlayerInputHandler : MonoBehaviour
     {
         return maxHealth;
     }
+
+    // -----
+    // Ammo:
+    // -----
+    public int GetCurrentAmmo()
+    {
+        return currentAmmo;
+    }
+
+    public int GetAvailableAmmo()
+    {
+        return availableAmmo;
+    }
+
+    public void DecrementAmmo()
+    {
+        if(currentAmmo > 0)
+        {
+            currentAmmo = currentAmmo - 1;
+        }
+    }
+    
 }

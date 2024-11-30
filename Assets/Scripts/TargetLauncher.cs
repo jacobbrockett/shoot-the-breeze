@@ -9,7 +9,7 @@ public class TargetLauncher : MonoBehaviour
     [SerializeField] int launchInterval;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         LaunchTargets(); // coroutine that launches skeets over a time interval
     }
