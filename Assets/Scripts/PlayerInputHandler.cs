@@ -45,7 +45,7 @@ public class PlayerInputHandler : MonoBehaviour
             }
         }
 
-        // TODO: Reload Weapon:
+        // Reload Weapon:
         if (Input.GetKeyDown(KeyCode.R))
         {
             Reload();

@@ -8,17 +8,27 @@ public class TargetLauncher : MonoBehaviour
     [SerializeField] PlayerInputHandler playerInputHandler;
     [SerializeField] int launchInterval;
 
-    // Start is called before the first frame update
-    public void Start()
+    IEnumerator LaunchTargetsCoroutine = null;
+
+    public void StartTargets()
     {
-        LaunchTargets(); // coroutine that launches skeets over a time interval
+        if (LaunchTargetsCoroutine == null)
+        {
+            LaunchTargetsCoroutine = LaunchTargetsRoutine();
+            StartCoroutine(LaunchTargetsCoroutine);
+        }
     }
 
-    void LaunchTargets()
+    public void StopTargets()
     {
-        StartCoroutine(LaunchTargetsRoutine());
+        if(LaunchTargetsCoroutine != null)
+        {
+            StopCoroutine(LaunchTargetsCoroutine);
+            LaunchTargetsCoroutine = null;
+        }
+    }
 
-        IEnumerator LaunchTargetsRoutine()
+    IEnumerator LaunchTargetsRoutine() // coroutine that launches skeets over a time interval
         {
             while(true)
             {
@@ -37,5 +47,4 @@ public class TargetLauncher : MonoBehaviour
             }
             
         }
-    }
 }
