@@ -19,7 +19,7 @@ public class StatsTracker : MonoBehaviour
     * args: none
     * description: Update the point counter text with current points
     */
-    public void Update()
+    void Update()
     {
         // Update Points:
         int currentPoints = playerInputHandler.GetCurrentPoints();
