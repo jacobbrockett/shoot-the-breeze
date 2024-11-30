@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
+
 
 public class TutorialHandler : MonoBehaviour
 {
@@ -72,7 +74,7 @@ public class TutorialHandler : MonoBehaviour
                     break;
                 default:
                     // TODO: Add Fade away
-                    // Load next scene
+                    SceneManager.LoadScene("Level_1");
                     break;
             }
         }

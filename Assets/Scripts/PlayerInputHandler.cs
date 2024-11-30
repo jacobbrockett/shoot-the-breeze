@@ -40,8 +40,10 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if(currentAmmo > 0)
             {
-                player.GetProjectileLauncher().Launch();
-                DecrementAmmo();
+                if(player.GetProjectileLauncher().Launch() != null)
+                {
+                    DecrementAmmo();
+                }
             }
         }
 
