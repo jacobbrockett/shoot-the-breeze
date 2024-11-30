@@ -30,8 +30,7 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] float reloadTime = 1f;
 
     [Header("Audio")]
-    [SerializeField] AudioSource audioSource; // or GetComponent<AudioSource>()
-    [SerializeField] AudioClip audioClip;
+    [SerializeField] AudioSource gunshot; 
     
     public void Update()
     {
@@ -43,6 +42,7 @@ public class PlayerInputHandler : MonoBehaviour
                 if(player.GetProjectileLauncher().Launch() != null)
                 {
                     DecrementAmmo();
+                    gunshot.Play();
                 }
             }
         }

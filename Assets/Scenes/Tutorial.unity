@@ -2022,22 +2022,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1176481715196920450, guid: 8b145658a3520411b83575936725eab7, type: 3}
-      propertyPath: currentAmmo
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1176481715196920450, guid: 8b145658a3520411b83575936725eab7, type: 3}
-      propertyPath: availableAmmo
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2576687657147280179, guid: 8b145658a3520411b83575936725eab7, type: 3}
-      propertyPath: projectileSpeed
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 4803055874411064621, guid: 8b145658a3520411b83575936725eab7, type: 3}
-      propertyPath: rotationSpeed
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 4969014029781452058, guid: 8b145658a3520411b83575936725eab7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
