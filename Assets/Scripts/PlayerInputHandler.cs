@@ -27,22 +27,23 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] int currentAmmo = 5;
     [SerializeField] int maxAmmo = 5;
     [SerializeField] int availableAmmo = 10;
-    [SerializeField] float reloadTime = 1f;
+    [SerializeField] float reloadTime = 2f;
 
     [Header("Audio")]
-    [SerializeField] AudioSource audioSource; // or GetComponent<AudioSource>()
-    [SerializeField] AudioClip audioClip;
+    [SerializeField] AudioSource gunshot;
+    [SerializeField] AudioSource gunReload;
     
     public void Update()
     {
         // Fire Weapon:
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(currentAmmo > 0)
+            if(currentAmmo > 0 && currentlyReloading == false)
             {
                 if(player.GetProjectileLauncher().Launch() != null)
                 {
                     DecrementAmmo();
+                    gunshot.Play();
                 }
             }
         }
@@ -138,6 +139,7 @@ public class PlayerInputHandler : MonoBehaviour
 
         currentlyReloading = true;
         StartCoroutine(ReloadRoutine());
+        gunReload.Play();
 
         IEnumerator ReloadRoutine()
         {
