@@ -5,6 +5,10 @@ using UnityEngine.Audio;
 
 using UnityEngine.SceneManagement;
 
+// Must Include:
+using UnityEngine.UI;
+using TMPro;
+
 
 /**
 * class: PlayerInputHandler
@@ -32,6 +36,9 @@ public class PlayerInputHandler : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioSource gunshot;
     [SerializeField] AudioSource gunReload;
+
+    [Header("Text")]
+    [SerializeField] TextMeshProUGUI reloadText;
     
     public void Update()
     {
@@ -140,6 +147,7 @@ public class PlayerInputHandler : MonoBehaviour
         currentlyReloading = true;
         StartCoroutine(ReloadRoutine());
         gunReload.Play();
+        reloadText.text = "Reloading...";
 
         IEnumerator ReloadRoutine()
         {
@@ -163,6 +171,7 @@ public class PlayerInputHandler : MonoBehaviour
             }
 
             currentlyReloading = false;
+            reloadText.text = "";
             Debug.Log("Reload routine done!");
         }
     }
