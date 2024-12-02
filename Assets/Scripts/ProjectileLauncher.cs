@@ -110,4 +110,9 @@ public class ProjectileLauncher : MonoBehaviour
     {
         return maxAmmo;
     }
+
+    public void SetProjectileSpeed(float projectileSpeed)
+    {
+        this.projectileSpeed = projectileSpeed;
+    }
 }

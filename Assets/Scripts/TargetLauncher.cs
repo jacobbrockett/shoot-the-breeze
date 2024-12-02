@@ -7,7 +7,7 @@ public class TargetLauncher : MonoBehaviour
     [SerializeField] PlayerInputHandler playerInputHandler;
     [Header("Projectile")]
     [SerializeField] ProjectileLauncher projectileLauncher;
-    [SerializeField] int launchInterval;
+    [SerializeField] float launchInterval;
     [Header("Audio")]
     [SerializeField] AudioSource launchAudio;
     [SerializeField] AudioSource damageAudio;
