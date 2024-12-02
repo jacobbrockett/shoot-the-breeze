@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileLauncher : MonoBehaviour
 {
     [Header("Config")]
-    [SerializeField] float projectileSpeed = 10.0f;
+    [SerializeField] float defaultProjectileSpeed = 10.0f;
     
     [Header("Prefab")]
     [SerializeField] GameObject projectilePrefab;
@@ -30,7 +30,27 @@ public class ProjectileLauncher : MonoBehaviour
 
     bool coolingDown = false;
     // Launch a projectile Forward
-    public GameObject Launch(){ // return recoil amount
+    public GameObject Launch(){
+
+        if(coolingDown)
+        {
+            return null;
+        }
+        CoolDown();
+
+        currentAmmo -= 1;
+
+        GameObject newProjectile = Instantiate(projectilePrefab, spawnTransform.position, Quaternion.identity); // creates new projectile
+
+        newProjectile.GetComponent<Rigidbody2D>().velocity = transform.up * this.defaultProjectileSpeed;
+
+        Destroy(newProjectile, ammoDuration); // destroy projectile after 30 seconds
+
+        return newProjectile;
+    }
+
+    // Launch a projectile Forward with a given speed
+    public GameObject Launch(float projectileSpeed){
 
         if(coolingDown)
         {
@@ -113,6 +133,6 @@ public class ProjectileLauncher : MonoBehaviour
 
     public void SetProjectileSpeed(float projectileSpeed)
     {
-        this.projectileSpeed = projectileSpeed;
+        this.defaultProjectileSpeed = projectileSpeed;
     }
 }
