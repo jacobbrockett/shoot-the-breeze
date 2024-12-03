@@ -24,6 +24,10 @@ public class Target : MonoBehaviour
             {
                 playerInputHandler.AddAmmo(ammoValue);
             }
+            else if(this.CompareTag("Health"))
+            {
+                playerInputHandler.IncrementHealth();
+            }
             
 
             damageAudio.Play();

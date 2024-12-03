@@ -13,6 +13,7 @@ public class DuckHunter : MonoBehaviour
     [SerializeField] TargetLauncher targetLauncher_2;
     [SerializeField] TargetLauncher targetLauncher_3;
     [SerializeField] TargetLauncher ammoLauncher;
+    [SerializeField] TargetLauncher healthLauncher;
     [SerializeField] PlayerInputHandler playerInputHandler;
     [Header("Text")]
     [SerializeField] TextMeshProUGUI levelText;
@@ -29,6 +30,9 @@ public class DuckHunter : MonoBehaviour
 
         // Start Launching Ammo:
         ammoLauncher.StartTargets();
+
+        // Start Launching Health:
+        healthLauncher.StartTargets();
     }
     public void Update()
     {
@@ -37,6 +41,16 @@ public class DuckHunter : MonoBehaviour
         {
             // Stop Launching Targets:
             targetLauncher_1.StopTargets();
+            targetLauncher_2.StopTargets();
+            targetLauncher_3.StopTargets();
+
+            // Stop Launching Ammo:
+            ammoLauncher.StopTargets();
+
+            // Stop Launching Health:
+            healthLauncher.StopTargets();
+
+            // Message to End Level:
             levelText.text = "Out of Ammo!!!";
             hasAmmo = false;
         }
