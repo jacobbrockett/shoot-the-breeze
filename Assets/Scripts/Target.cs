@@ -7,6 +7,7 @@ public class Target : MonoBehaviour
     [Header("Points")]
     [SerializeField] PlayerInputHandler playerInputHandler;
     [SerializeField] int pointValue;
+    [SerializeField] int ammoValue;
     [Header("Audio")]
     [SerializeField] AudioSource damageAudio;
 
@@ -15,7 +16,15 @@ public class Target : MonoBehaviour
 
         if (other.CompareTag("Bullet")) // ensures object colliding is a player
         {
-            playerInputHandler.IncrementPoint(pointValue);
+            if (this.CompareTag("Target"))
+            {
+                playerInputHandler.IncrementPoint(pointValue);
+            }
+            else if(this.CompareTag("Ammo"))
+            {
+                playerInputHandler.AddAmmo(ammoValue);
+            }
+            
 
             damageAudio.Play();
 

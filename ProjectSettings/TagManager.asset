@@ -7,6 +7,7 @@ TagManager:
   - Projectile
   - Bullet
   - Target
+  - Ammo
   layers:
   - Default
   - TransparentFX

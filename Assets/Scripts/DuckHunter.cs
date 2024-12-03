@@ -9,7 +9,10 @@ using TMPro;
 public class DuckHunter : MonoBehaviour
 {
     [Header("Gameplay")]
-    [SerializeField] TargetLauncher targetLauncher;
+    [SerializeField] TargetLauncher targetLauncher_1;
+    [SerializeField] TargetLauncher targetLauncher_2;
+    [SerializeField] TargetLauncher targetLauncher_3;
+    [SerializeField] TargetLauncher ammoLauncher;
     [SerializeField] PlayerInputHandler playerInputHandler;
     [Header("Text")]
     [SerializeField] TextMeshProUGUI levelText;
@@ -20,7 +23,12 @@ public class DuckHunter : MonoBehaviour
     {
         levelText.text = "";
         // Start Launching Targets:
-        targetLauncher.StartTargets();
+        targetLauncher_1.StartTargets();
+        targetLauncher_2.StartTargets();
+        targetLauncher_3.StartTargets();
+
+        // Start Launching Ammo:
+        ammoLauncher.StartTargets();
     }
     public void Update()
     {
@@ -28,7 +36,7 @@ public class DuckHunter : MonoBehaviour
         if (hasAmmo && playerInputHandler.GetAvailableAmmo() == 0 && playerInputHandler.GetCurrentAmmo() == 0)
         {
             // Stop Launching Targets:
-            targetLauncher.StopTargets();
+            targetLauncher_1.StopTargets();
             levelText.text = "Out of Ammo!!!";
             hasAmmo = false;
         }

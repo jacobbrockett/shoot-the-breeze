@@ -53,7 +53,10 @@ public class TargetLauncher : MonoBehaviour
                     newObject = projectileLauncher.Launch(Random.Range(minProjectileSpeed, maxProjectileSpeed));
                 }
 
-                launchAudio.Play();
+                if (launchAudio != null)
+                {
+                    launchAudio.Play();
+                }
 
                 if(newObject != null)
                 {
