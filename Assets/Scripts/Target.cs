@@ -46,11 +46,29 @@ public class Target : MonoBehaviour
             }
             
         }
+        else if (other.CompareTag("Player")) // ensures object colliding is a Player
+        {
+
+            if (parent != null)
+            {
+                Destroy(parent);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+            
+        }
     }
 
     public void SetPlayerInputHandler(PlayerInputHandler playerInputHandler)
     {
         this.playerInputHandler = playerInputHandler;
+    }
+
+    public PlayerInputHandler GetPlayerInputHandler()
+    {
+        return playerInputHandler;
     }
 
     public void SetDamageAudio(AudioSource audio)

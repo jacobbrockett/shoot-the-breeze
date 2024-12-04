@@ -17,5 +17,11 @@ public class EnemyDamage : MonoBehaviour
 
             Destroy(other.gameObject);
         }
+        else if (other.CompareTag("Target"))
+        {
+            playerInputHandler.DecrementHealth();
+
+            damageAudio.Play();
+        }
     }
 }

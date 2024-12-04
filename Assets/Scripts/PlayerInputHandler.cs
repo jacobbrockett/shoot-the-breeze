@@ -180,5 +180,11 @@ public class PlayerInputHandler : MonoBehaviour
             Debug.Log("Reload routine done!");
         }
     }
+
+
+    public Player GetPlayer()
+    {
+        return player;
+    }
     
 }
