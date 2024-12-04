@@ -960,6 +960,7 @@ MonoBehaviour:
   healthLauncher: {fileID: 188386962}
   playerInputHandler: {fileID: 824690589}
   levelText: {fileID: 1039053470}
+  nextLevel: MainMenu
 --- !u!4 &781080638
 Transform:
   m_ObjectHideFlags: 0

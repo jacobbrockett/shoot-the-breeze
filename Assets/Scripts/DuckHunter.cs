@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
+
 // Must Include:
 using UnityEngine.UI;
 using TMPro;
@@ -17,6 +20,8 @@ public class DuckHunter : MonoBehaviour
     [SerializeField] PlayerInputHandler playerInputHandler;
     [Header("Text")]
     [SerializeField] TextMeshProUGUI levelText;
+    [Header("Level Management")]
+    [SerializeField] string nextLevel;
 
     bool hasAmmo = true;
 
@@ -51,8 +56,13 @@ public class DuckHunter : MonoBehaviour
             healthLauncher.StopTargets();
 
             // Message to End Level:
-            levelText.text = "Out of Ammo!!!";
+            levelText.text = "Out of Ammo!!!\nPress Enter to go to next level...";
             hasAmmo = false;
+        }
+
+        if (!hasAmmo && Input.GetKeyDown(KeyCode.Return))
+        {
+            SceneManager.LoadScene(nextLevel);
         }
     }
 }
