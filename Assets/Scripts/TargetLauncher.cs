@@ -68,6 +68,11 @@ public class TargetLauncher : MonoBehaviour
 
                         newTarget.SetDamageAudio(damageAudio);
                     }
+
+                    if(newObject.CompareTag("Enemy"))
+                    {
+                        
+                    }
                 }
                 yield return new WaitForSeconds(launchInterval);
             }

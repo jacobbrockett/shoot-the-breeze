@@ -14,7 +14,7 @@ public class Target : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D other){
 
-        if (other.CompareTag("Bullet")) // ensures object colliding is a player
+        if (other.CompareTag("Bullet")) // ensures object colliding is a bullet
         {
             if (this.CompareTag("Target"))
             {

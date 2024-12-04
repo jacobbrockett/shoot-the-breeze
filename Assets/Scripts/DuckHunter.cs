@@ -11,12 +11,14 @@ using TMPro;
 
 public class DuckHunter : MonoBehaviour
 {
-    [Header("Gameplay")]
+    [Header("Launchers")]
     [SerializeField] TargetLauncher targetLauncher_1;
     [SerializeField] TargetLauncher targetLauncher_2;
     [SerializeField] TargetLauncher targetLauncher_3;
     [SerializeField] TargetLauncher ammoLauncher;
     [SerializeField] TargetLauncher healthLauncher;
+    [SerializeField] TargetLauncher enemyLauncher;
+    [Header("Player")]
     [SerializeField] PlayerInputHandler playerInputHandler;
     [Header("Text")]
     [SerializeField] TextMeshProUGUI levelText;
@@ -38,11 +40,21 @@ public class DuckHunter : MonoBehaviour
 
         // Start Launching Health:
         healthLauncher.StartTargets();
+
+        // Start Enemy Launcher:
+        if (enemyLauncher != null)
+        {
+            enemyLauncher.StartTargets();
+        }
     }
     public void Update()
     {
-        // Check if out of ammo:
-        if (hasAmmo && playerInputHandler.GetAvailableAmmo() == 0 && playerInputHandler.GetCurrentAmmo() == 0)
+        // Check if out of ammo or dead:
+        if (
+            (hasAmmo && playerInputHandler.GetAvailableAmmo() == 0 && playerInputHandler.GetCurrentAmmo() == 0)
+            || 
+            playerInputHandler.GetCurrentHealth() == 0
+            )
         {
             // Stop Launching Targets:
             targetLauncher_1.StopTargets();
@@ -55,8 +67,14 @@ public class DuckHunter : MonoBehaviour
             // Stop Launching Health:
             healthLauncher.StopTargets();
 
+            // Stop Enemy Launcher:
+            if (enemyLauncher != null)
+            {
+                enemyLauncher.StopTargets();
+            }
+
             // Message to End Level:
-            levelText.text = "Out of Ammo!!!\nPress Enter to go to next level...";
+            levelText.text = "Game over!!!\nPress Enter to go to next level...";
             hasAmmo = false;
         }
 

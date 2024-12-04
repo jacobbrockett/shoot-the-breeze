@@ -9,6 +9,7 @@ TagManager:
   - Target
   - Ammo
   - Health
+  - Enemy
   layers:
   - Default
   - TransparentFX

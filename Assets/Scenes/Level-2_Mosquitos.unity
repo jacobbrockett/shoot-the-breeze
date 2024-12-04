@@ -239,7 +239,11 @@ PrefabInstance:
     - target: {fileID: 6468978329217925596, guid: 998f2bb11839142258a6ec97dc1f48d7, type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 8549579904131943604, guid: 0eb11928213a74c8a98ed8488bf07cc2, type: 3}
+      objectReference: {fileID: 8032782782234739976, guid: 58657abde065a44b8906e1d134490713, type: 3}
+    - target: {fileID: 6468978329217925596, guid: 998f2bb11839142258a6ec97dc1f48d7, type: 3}
+      propertyPath: defaultProjectileSpeed
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -410,7 +414,7 @@ Transform:
   m_GameObject: {fileID: 1582691053}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.4381726}
+  m_LocalPosition: {x: 0, y: -3, z: 0.4381726}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -432,8 +436,8 @@ MonoBehaviour:
   playerInputHandler: {fileID: 824690589}
   projectileLauncher: {fileID: 436895912}
   launchInterval: 9
-  minProjectileSpeed: 10
-  maxProjectileSpeed: 20
+  minProjectileSpeed: 0
+  maxProjectileSpeed: 0
   launchAudio: {fileID: 0}
   damageAudio: {fileID: 1322586020}
 --- !u!212 &1582691056
@@ -770,6 +774,10 @@ PrefabInstance:
       propertyPath: ammoLauncher
       value: 
       objectReference: {fileID: 1227426656}
+    - target: {fileID: 2090761393282380877, guid: efa518ac38d174e1b81f91e1059489d6, type: 3}
+      propertyPath: enemyLauncher
+      value: 
+      objectReference: {fileID: 1582691055}
     - target: {fileID: 2090761393282380877, guid: efa518ac38d174e1b81f91e1059489d6, type: 3}
       propertyPath: healthLauncher
       value: 
