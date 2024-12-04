@@ -215,7 +215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7959080119507737967, guid: 77dc3547c17d54bb1a5b72b702efc6ae, type: 3}
       propertyPath: m_TagString
-      value: Diver
+      value: Duck
       objectReference: {fileID: 0}
     - target: {fileID: 9010281615122887035, guid: 77dc3547c17d54bb1a5b72b702efc6ae, type: 3}
       propertyPath: m_LocalPosition.x
@@ -258,7 +258,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 3769584189641342348, guid: 77dc3547c17d54bb1a5b72b702efc6ae, type: 3}
     - {fileID: 6080253182926007976, guid: 77dc3547c17d54bb1a5b72b702efc6ae, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:

@@ -61,7 +61,7 @@ public class TargetLauncher : MonoBehaviour
                 if(newObject != null)
                 {
                     Target newTarget;
-                    if (newObject.CompareTag("Diver"))
+                    if (newObject.CompareTag("Duck"))
                     {
                         newTarget = newObject.GetComponentInChildren<Target>();
                     }
