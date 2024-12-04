@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: 69d28a703e9d44aeba68fa5dcfa1c40c
   - enabled: 1
-    path: Assets/Scenes/Level_1.unity
-    guid: ef277656af81c40feb6989a9b95a6f02
+    path: Assets/Scenes/Level-1_Duck-Hunter.unity
+    guid: 32b3b858931454d73831f25ced2b3ee2
   m_configObjects: {}

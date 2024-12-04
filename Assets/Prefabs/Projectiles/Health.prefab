@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2780681820051211125, guid: df10032735f534401aa5621e4d82ab99, type: 3}
+      propertyPath: m_Radius
+      value: 0.5092305
+      objectReference: {fileID: 0}
+    - target: {fileID: -2780681820051211125, guid: df10032735f534401aa5621e4d82ab99, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0024290085
+      objectReference: {fileID: 0}
+    - target: {fileID: -2780681820051211125, guid: df10032735f534401aa5621e4d82ab99, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.08550274
+      objectReference: {fileID: 0}
     - target: {fileID: 237878740360895592, guid: df10032735f534401aa5621e4d82ab99, type: 3}
       propertyPath: m_Name
       value: Health
@@ -18,15 +30,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1167482495324926076, guid: df10032735f534401aa5621e4d82ab99, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1167482495324926076, guid: df10032735f534401aa5621e4d82ab99, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1167482495324926076, guid: df10032735f534401aa5621e4d82ab99, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1167482495324926076, guid: df10032735f534401aa5621e4d82ab99, type: 3}
       propertyPath: m_LocalPosition.x
@@ -76,6 +88,10 @@ PrefabInstance:
       propertyPath: pointValue
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4330546803581935080, guid: df10032735f534401aa5621e4d82ab99, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3a4050b41da5477d94a1fe1775444a5, type: 3}
     - target: {fileID: 4330546803581935080, guid: df10032735f534401aa5621e4d82ab99, type: 3}
       propertyPath: m_Color.b
       value: 0.05088234
