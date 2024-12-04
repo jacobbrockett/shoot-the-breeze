@@ -540,10 +540,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1039053470}
     - target: {fileID: 2090761393282380877, guid: efa518ac38d174e1b81f91e1059489d6, type: 3}
-      propertyPath: nextLevel
-      value: Level-2_Mosquitos
-      objectReference: {fileID: 0}
-    - target: {fileID: 2090761393282380877, guid: efa518ac38d174e1b81f91e1059489d6, type: 3}
       propertyPath: ammoLauncher
       value: 
       objectReference: {fileID: 1227426656}
@@ -628,18 +624,6 @@ PrefabInstance:
       propertyPath: playerInputHandler
       value: 
       objectReference: {fileID: 824690589}
-    - target: {fileID: 847994527568935047, guid: d135bc3d085604290b344464e52edf71, type: 3}
-      propertyPath: launchInterval
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 847994527568935047, guid: d135bc3d085604290b344464e52edf71, type: 3}
-      propertyPath: maxProjectileSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 847994527568935047, guid: d135bc3d085604290b344464e52edf71, type: 3}
-      propertyPath: minProjectileSpeed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 847994527568935047, guid: d135bc3d085604290b344464e52edf71, type: 3}
       propertyPath: playerInputHandler
       value: 
