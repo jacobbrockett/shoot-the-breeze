@@ -362,6 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInputHandler: {fileID: 1176481715196920450}
+  damageAudio: {fileID: 162256864140050222}
 --- !u!1 &2646220089923540029
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1049,7 @@ PrefabInstance:
       objectReference: {fileID: 552128737768472798, guid: 255dc6d6af74043f9b5878a9504841bd, type: 3}
     - target: {fileID: 6468978329217925596, guid: 998f2bb11839142258a6ec97dc1f48d7, type: 3}
       propertyPath: defaultProjectileSpeed
-      value: 60
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 7725360598699712723, guid: 998f2bb11839142258a6ec97dc1f48d7, type: 3}
       propertyPath: m_Name

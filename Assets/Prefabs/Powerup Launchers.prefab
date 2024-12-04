@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInputHandler: {fileID: 0}
   projectileLauncher: {fileID: 854618663564338687}
-  launchInterval: 9
+  launchInterval: 10
   minProjectileSpeed: 10
   maxProjectileSpeed: 20
   launchAudio: {fileID: 0}
@@ -129,7 +129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2667108894267647158}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.019978758, w: 0.99980044}
+  m_LocalRotation: {x: 0, y: 0, z: -0.019982738, w: 0.9998003}
   m_LocalPosition: {x: 20, y: -26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1

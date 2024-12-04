@@ -304,11 +304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da970473f47054b0690acd612809da82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &1224130219 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 162256864140050222, guid: 8b145658a3520411b83575936725eab7, type: 3}
-  m_PrefabInstance: {fileID: 5140654003077412866}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1227426656 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 847994527568935047, guid: d135bc3d085604290b344464e52edf71, type: 3}
@@ -1043,10 +1038,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5992889937352400962, guid: 8b145658a3520411b83575936725eab7, type: 3}
-      propertyPath: damageAudio
-      value: 
-      objectReference: {fileID: 1224130219}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
