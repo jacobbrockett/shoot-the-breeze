@@ -129,6 +129,11 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    public void AddAmmo(int amount)
+    {
+        availableAmmo = availableAmmo + amount;
+    }
+
     bool currentlyReloading = false;
     public void Reload()
     {

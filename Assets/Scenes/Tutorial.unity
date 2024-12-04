@@ -1159,6 +1159,10 @@ PrefabInstance:
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 237878740360895592, guid: df10032735f534401aa5621e4d82ab99, type: 3}
+    - target: {fileID: 6468978329217925596, guid: 998f2bb11839142258a6ec97dc1f48d7, type: 3}
+      propertyPath: defaultProjectileSpeed
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1896,6 +1900,8 @@ MonoBehaviour:
   playerInputHandler: {fileID: 824690589}
   projectileLauncher: {fileID: 975834768}
   launchInterval: 2
+  minProjectileSpeed: 10
+  maxProjectileSpeed: 10
   launchAudio: {fileID: 1346643485}
   damageAudio: {fileID: 1903250938}
 --- !u!4 &1783853410
@@ -2346,6 +2352,7 @@ MonoBehaviour:
   pointsText: {fileID: 1700206193}
   healthText: {fileID: 2071850783}
   ammoText: {fileID: 1055792744}
+  nextLevel: Level-1_Duck-Hunter
 --- !u!4 &2114385543
 Transform:
   m_ObjectHideFlags: 0

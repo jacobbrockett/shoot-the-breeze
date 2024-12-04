@@ -7,6 +7,8 @@ TagManager:
   - Projectile
   - Bullet
   - Target
+  - Ammo
+  - Health
   layers:
   - Default
   - TransparentFX

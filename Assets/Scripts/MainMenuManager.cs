@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    [SerializeField] string nextLevelName = "Tutorial";
     /**
     * function: StartGame()
     * args: None
@@ -13,7 +14,7 @@ public class MainMenuManager : MonoBehaviour
     */
     public void StartGame()
     {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene(nextLevelName);
     }
 
     public void Options()

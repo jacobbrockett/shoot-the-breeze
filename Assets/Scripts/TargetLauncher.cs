@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class TargetLauncher : MonoBehaviour
 {
+    [Header("Player")]
     [SerializeField] PlayerInputHandler playerInputHandler;
     [Header("Projectile")]
     [SerializeField] ProjectileLauncher projectileLauncher;
-    [SerializeField] int launchInterval;
+    [SerializeField] float launchInterval;
+    [SerializeField] float minProjectileSpeed = 10.0f;
+    [SerializeField] float maxProjectileSpeed = 10.0f;
+    float projectileSpeed;
     [Header("Audio")]
     [SerializeField] AudioSource launchAudio;
     [SerializeField] AudioSource damageAudio;
@@ -36,9 +40,23 @@ public class TargetLauncher : MonoBehaviour
         {
             while(true)
             {
-                GameObject newObject = projectileLauncher.Launch();
+                GameObject newObject;
+                // Calculate Projectile Speed:
+                if (minProjectileSpeed == maxProjectileSpeed)
+                {
+                    // Launch Object:
+                    newObject = projectileLauncher.Launch();
+                }
+                else
+                {                    
+                    // Launch Object with random speed:
+                    newObject = projectileLauncher.Launch(Random.Range(minProjectileSpeed, maxProjectileSpeed));
+                }
 
-                launchAudio.Play();
+                if (launchAudio != null)
+                {
+                    launchAudio.Play();
+                }
 
                 if(newObject != null)
                 {
