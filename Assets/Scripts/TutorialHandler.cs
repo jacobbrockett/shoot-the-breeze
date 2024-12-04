@@ -20,6 +20,8 @@ public class TutorialHandler : MonoBehaviour
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] TextMeshProUGUI ammoText;
     int tutorialIndex = 0;
+    [Header("Level Management")]
+    [SerializeField] string nextLevel;
     
 
     public void Start()
@@ -74,7 +76,7 @@ public class TutorialHandler : MonoBehaviour
                     break;
                 default:
                     // TODO: Add Fade away
-                    SceneManager.LoadScene("Level_1");
+                    SceneManager.LoadScene(nextLevel);
                     break;
             }
         }

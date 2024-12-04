@@ -2352,6 +2352,7 @@ MonoBehaviour:
   pointsText: {fileID: 1700206193}
   healthText: {fileID: 2071850783}
   ammoText: {fileID: 1055792744}
+  nextLevel: Level-1_Duck-Hunter
 --- !u!4 &2114385543
 Transform:
   m_ObjectHideFlags: 0
