@@ -349,6 +349,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3414559330903523203, guid: 521fa223fe0f84fe8a61978b705399cd, type: 3}
+      propertyPath: maxProjectileSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3414559330903523203, guid: 521fa223fe0f84fe8a61978b705399cd, type: 3}
+      propertyPath: minProjectileSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3414559330903523203, guid: 521fa223fe0f84fe8a61978b705399cd, type: 3}
       propertyPath: playerInputHandler
       value: 
       objectReference: {fileID: 824690589}
@@ -396,14 +404,34 @@ PrefabInstance:
       propertyPath: playerInputHandler
       value: 
       objectReference: {fileID: 824690589}
+    - target: {fileID: 5661601419379606960, guid: 521fa223fe0f84fe8a61978b705399cd, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 4088245853395275667, guid: f17f3565020474cac8474599446e3ff7, type: 3}
     - target: {fileID: 6135175613684871815, guid: 521fa223fe0f84fe8a61978b705399cd, type: 3}
       propertyPath: m_Name
       value: Duck Launchers
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135175613684871815, guid: 521fa223fe0f84fe8a61978b705399cd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6219090252891354888, guid: 521fa223fe0f84fe8a61978b705399cd, type: 3}
       propertyPath: playerInputHandler
       value: 
       objectReference: {fileID: 824690589}
+    - target: {fileID: 7095459339998864916, guid: 521fa223fe0f84fe8a61978b705399cd, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 4088245853395275667, guid: f17f3565020474cac8474599446e3ff7, type: 3}
+    - target: {fileID: 7442657202899114442, guid: 521fa223fe0f84fe8a61978b705399cd, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 4088245853395275667, guid: f17f3565020474cac8474599446e3ff7, type: 3}
+    - target: {fileID: 7442657202899114442, guid: 521fa223fe0f84fe8a61978b705399cd, type: 3}
+      propertyPath: defaultProjectileSpeed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -540,6 +568,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1039053470}
     - target: {fileID: 2090761393282380877, guid: efa518ac38d174e1b81f91e1059489d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090761393282380877, guid: efa518ac38d174e1b81f91e1059489d6, type: 3}
       propertyPath: ammoLauncher
       value: 
       objectReference: {fileID: 1227426656}
@@ -671,6 +703,10 @@ PrefabInstance:
     - target: {fileID: 2667108894267647158, guid: d135bc3d085604290b344464e52edf71, type: 3}
       propertyPath: m_Name
       value: Powerup Launchers
+      objectReference: {fileID: 0}
+    - target: {fileID: 2667108894267647158, guid: d135bc3d085604290b344464e52edf71, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

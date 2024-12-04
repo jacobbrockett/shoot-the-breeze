@@ -60,7 +60,15 @@ public class TargetLauncher : MonoBehaviour
 
                 if(newObject != null)
                 {
-                    Target newTarget = newObject.GetComponent<Target>();
+                    Target newTarget;
+                    if (newObject.CompareTag("Diver"))
+                    {
+                        newTarget = newObject.GetComponentInChildren<Target>();
+                    }
+                    else
+                    {
+                        newTarget = newObject.GetComponent<Target>();
+                    }
 
                     if(newTarget != null)
                     {
@@ -68,11 +76,7 @@ public class TargetLauncher : MonoBehaviour
 
                         newTarget.SetDamageAudio(damageAudio);
                     }
-
-                    if(newObject.CompareTag("Enemy"))
-                    {
-                        
-                    }
+                    
                 }
                 yield return new WaitForSeconds(launchInterval);
             }
