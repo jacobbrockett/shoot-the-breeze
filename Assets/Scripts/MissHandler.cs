@@ -8,6 +8,7 @@ public class MissHandler : MonoBehaviour
     [SerializeField] DivingDuck divingDuck;
     [SerializeField] Player player;
     [SerializeField] Target target;
+    [SerializeField] AnimationStateChanger animationStateChanger;
 
     // AI:
     delegate void AIState();
@@ -36,6 +37,7 @@ public class MissHandler : MonoBehaviour
             {
                 Debug.Log("Miss!");
                 ChangeState(AttackState);
+                animationStateChanger.ChangeAnimationState("Diving");
             }
         }
     }    

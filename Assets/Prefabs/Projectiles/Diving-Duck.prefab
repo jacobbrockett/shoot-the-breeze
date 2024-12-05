@@ -201,6 +201,7 @@ MonoBehaviour:
   divingDuck: {fileID: 2094082214522128342}
   player: {fileID: 0}
   target: {fileID: 940117827848487382}
+  animationStateChanger: {fileID: 3549223997031011689}
 --- !u!1001 &6253257713669051132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -271,7 +272,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7959080119507737967, guid: 77dc3547c17d54bb1a5b72b702efc6ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2094082214522128342}
+    - targetCorrespondingSourceObject: {fileID: 7959080119507737967, guid: 77dc3547c17d54bb1a5b72b702efc6ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3549223997031011689}
   m_SourcePrefab: {fileID: 100100000, guid: 77dc3547c17d54bb1a5b72b702efc6ae, type: 3}
+--- !u!95 &2647477134604236024 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8247694757946123780, guid: 77dc3547c17d54bb1a5b72b702efc6ae, type: 3}
+  m_PrefabInstance: {fileID: 6253257713669051132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3153359360631432071 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9010281615122887035, guid: 77dc3547c17d54bb1a5b72b702efc6ae, type: 3}
@@ -295,8 +304,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5668768726411503100}
-  speed: 10
-  rotationSpeed: 5
+  speed: 50
+  rotationSpeed: 20
+--- !u!114 &3549223997031011689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088245853395275667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea9a455559154a43b91311ee931e078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2647477134604236024}
+  currentState: Flying
 --- !u!50 &5668768726411503100 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 1757402061507327744, guid: 77dc3547c17d54bb1a5b72b702efc6ae, type: 3}
