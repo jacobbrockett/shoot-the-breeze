@@ -22,6 +22,8 @@ public class DuckHunter : MonoBehaviour
     [SerializeField] PlayerInputHandler playerInputHandler;
     [Header("Text")]
     [SerializeField] TextMeshProUGUI levelText;
+    [SerializeField] TextMeshProUGUI startText;
+    [SerializeField] string startString = "";
     [Header("Level Management")]
     [SerializeField] string nextLevel;
 
@@ -30,6 +32,7 @@ public class DuckHunter : MonoBehaviour
     public void Start()
     {
         levelText.text = "";
+        startText.text = startString;
         // Start Launching Targets:
         targetLauncher_1.StartTargets();
         targetLauncher_2.StartTargets();

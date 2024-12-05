@@ -49,6 +49,9 @@ MonoBehaviour:
   targetLauncher_3: {fileID: 0}
   ammoLauncher: {fileID: 0}
   healthLauncher: {fileID: 0}
+  enemyLauncher: {fileID: 0}
   playerInputHandler: {fileID: 0}
   levelText: {fileID: 0}
-  nextLevel: MainMenu
+  startText: {fileID: 0}
+  startString: Make sure to grab ammo and health!!
+  nextLevel: Level-2_Mosquitos
