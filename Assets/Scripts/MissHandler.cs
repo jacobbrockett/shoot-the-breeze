@@ -9,6 +9,7 @@ public class MissHandler : MonoBehaviour
     [SerializeField] Player player;
     [SerializeField] Target target;
     [SerializeField] AnimationStateChanger animationStateChanger;
+    [SerializeField] AudioSource diveAudio;
 
     // AI:
     delegate void AIState();
@@ -38,6 +39,7 @@ public class MissHandler : MonoBehaviour
                 Debug.Log("Miss!");
                 ChangeState(AttackState);
                 animationStateChanger.ChangeAnimationState("Diving");
+                diveAudio.Play();
             }
         }
     }    

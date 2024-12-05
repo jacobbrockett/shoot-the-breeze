@@ -95,6 +95,10 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void DecrementHealth()
     {
+        if(currentHealth == 0)
+        {
+            return;
+        }
         currentHealth = currentHealth - 1;
     }
 
