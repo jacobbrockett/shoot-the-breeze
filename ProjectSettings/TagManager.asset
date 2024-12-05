@@ -10,6 +10,8 @@ TagManager:
   - Ammo
   - Health
   - Enemy
+  - Diver
+  - Duck
   layers:
   - Default
   - TransparentFX

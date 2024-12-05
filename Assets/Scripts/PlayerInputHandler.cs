@@ -95,6 +95,10 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void DecrementHealth()
     {
+        if(currentHealth == 0)
+        {
+            return;
+        }
         currentHealth = currentHealth - 1;
     }
 
@@ -179,6 +183,12 @@ public class PlayerInputHandler : MonoBehaviour
             reloadText.text = "";
             Debug.Log("Reload routine done!");
         }
+    }
+
+
+    public Player GetPlayer()
+    {
+        return player;
     }
     
 }

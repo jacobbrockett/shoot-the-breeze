@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level-1_Duck-Hunter.unity
     guid: 32b3b858931454d73831f25ced2b3ee2
+  - enabled: 1
+    path: Assets/Scenes/Level-2_Mosquitos.unity
+    guid: 1f2e6535fe4d640a491677c9c66c2e20
+  - enabled: 1
+    path: Assets/Scenes/Level-3_Diving-Ducks.unity
+    guid: 6f92da3828f424090b36a89cca1a95e9
   m_configObjects: {}

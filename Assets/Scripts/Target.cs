@@ -10,6 +10,8 @@ public class Target : MonoBehaviour
     [SerializeField] int ammoValue;
     [Header("Audio")]
     [SerializeField] AudioSource damageAudio;
+    [Header("Game Objects")]
+    [SerializeField] GameObject parent;
 
     
     public void OnTriggerEnter2D(Collider2D other){
@@ -33,13 +35,40 @@ public class Target : MonoBehaviour
             damageAudio.Play();
 
             Destroy(other.gameObject);
-            Destroy(this.gameObject);
+
+            if (parent != null)
+            {
+                Destroy(parent);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+            
+        }
+        else if (other.CompareTag("Player")) // ensures object colliding is a Player
+        {
+
+            if (parent != null)
+            {
+                Destroy(parent);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+            
         }
     }
 
     public void SetPlayerInputHandler(PlayerInputHandler playerInputHandler)
     {
         this.playerInputHandler = playerInputHandler;
+    }
+
+    public PlayerInputHandler GetPlayerInputHandler()
+    {
+        return playerInputHandler;
     }
 
     public void SetDamageAudio(AudioSource audio)

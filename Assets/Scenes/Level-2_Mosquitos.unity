@@ -1056,6 +1056,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1039053470}
     - target: {fileID: 2090761393282380877, guid: efa518ac38d174e1b81f91e1059489d6, type: 3}
+      propertyPath: nextLevel
+      value: Level-3_Diving-Ducks
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090761393282380877, guid: efa518ac38d174e1b81f91e1059489d6, type: 3}
       propertyPath: ammoLauncher
       value: 
       objectReference: {fileID: 1227426656}

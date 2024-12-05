@@ -9,7 +9,7 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] AudioSource damageAudio;
     public void OnTriggerEnter2D(Collider2D other){
 
-        if (other.CompareTag("Enemy")) // ensures object colliding is a bullet
+        if (other.CompareTag("Enemy") || other.CompareTag("Duck")) // ensures object colliding is a bullet
         {
             playerInputHandler.DecrementHealth();
 
