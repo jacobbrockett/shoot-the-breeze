@@ -1,4 +1,6 @@
 # Shoot the Breeze
+## Gameplay
+[![Gameplay](https://img.youtube.com/vi/JEHGBp9dy2k/0.jpg)](https://www.youtube.com/watch?v=JEHGBp9dy2k)
 
 ## Description
 Shoot the Breeze is a 2D duck hunting game with an emphasis on power ups and
